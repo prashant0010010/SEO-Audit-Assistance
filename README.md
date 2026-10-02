@@ -104,14 +104,6 @@ The UI and PDF show the points awarded to every individual check so the result c
 
 Audit only websites you own or have permission to review. The tool only reads public pages, identifies itself with a User-Agent, respects robots.txt, uses a delay between requests and a hard page cap. It does not log in, bypass CAPTCHAs, scan ports or test for vulnerabilities, and refuses localhost/private-network addresses. (Basic guard only: it does not defend against DNS rebinding.)
 
-## Deployment (Streamlit Community Cloud)
-
-1. Push the repository to GitHub (the `output/` folder content is git-ignored).
-2. Go to https://share.streamlit.io, choose **New app**, select the repo, branch and `app.py`.
-3. Python 3.11+ and `requirements.txt` are picked up automatically; no secrets are needed.
-4. Leave `AUDIT_ALLOW_PRIVATE_HOSTS` unset (or `0`).
-
-Any host that can run `streamlit run app.py` works (Render, Railway, Fly.io, a small VPS, Docker). Use `--server.port` and `--server.address 0.0.0.0` as required. Keep the 20-page cap on public deployments.
 
 ## Future improvements
 
