@@ -1,0 +1,59 @@
+EXAMPLE AUDIT OUTPUT (generated against the bundled local test site in tests/fake_site.py,
+which contains deliberate SEO problems; it is NOT a real client website)
+
+Client: Kiwi Widgets   Pages crawled: 12
+Overall 70/100 | Technical 75 | Content 70 | AI Search 63 (Moderate)
+
+TOP 5 PRIORITY ISSUES
+[HIGH] Broken internal links
+  Found: 3 internal URLs return an error status, referenced by 3 links on the crawled pages.
+  Why it matters: Broken internal links can prevent users and crawlers from reaching intended content and waste crawl effort.
+  Action: Review the affected URLs and update or remove the broken links, or redirect the old URLs.
+
+[HIGH] Missing title tags
+  Found: 1 page has no title element.
+  Why it matters: The title is a primary on-page signal and often the headline shown in search results.
+  Action: Write a unique, descriptive title for each of these pages.
+
+[HIGH] Pages carry a noindex directive
+  Found: 1 crawled page sets noindex via meta robots or X-Robots-Tag.
+  Why it matters: Pages marked noindex are asked not to appear in search results. This is correct for private or utility pages, but harmful if applied to pages meant to attract traffic.
+  Action: Confirm each of these pages is meant to be excluded; remove noindex from any that should be indexed.
+
+[HIGH] Redirect loops
+  Found: 1 URL could not load because of a redirects loop or too many redirects.
+  Why it matters: Looping URLs cannot be loaded by users or crawlers.
+  Action: Fix the redirect rules for these URLs.
+
+[HIGH] Server errors (5xx) returned
+  Found: 1 crawled URL responded with a 5xx server error.
+  Why it matters: Server errors make content unavailable to users and crawlers and can reduce how often a site is crawled.
+  Action: Check server logs for these URLs and fix the underlying errors.
+
+RECOMMENDATIONS
+Priority 1: Fix 3 broken internal URLs (3 links)
+Priority 2: Add title tags to 1 page
+Priority 3: Review noindex on 1 page
+Priority 4: Fix redirect loops on 1 URL
+Priority 5: Resolve server errors on 1 URL
+Priority 6: Move the site to HTTPS
+Priority 7: Add missing canonical tags to 8 pages
+Priority 8: Make titles unique on 2 pages
+
+SCORE BREAKDOWN - TECHNICAL
+  Page availability: 15/20 - 9 of 12 crawled URLs returned a normal HTML page (HTTP 200).
+  Indexability (noindex): 13.3/15 - 8 of 9 pages have no noindex directive.
+  Canonical tag present: 0.8/7 - 1 of 9 pages declare a canonical URL.
+  Canonical not pointing elsewhere: 3/3 - 0 page(s) declare a canonical URL different from their own address.
+  Title tag present: 4.4/5 - 8 of 9 pages have a title.
+  Meta description present: 3.9/5 - 7 of 9 pages have a meta description.
+  Title and description unique: 3.9/5 - 2 page(s) share a title or description with another crawled page.
+  H1 heading: 8.9/10 - 1 page(s) without an H1; 0 with more than one (half credit).
+  Internal links not broken: 4.4/6 - 3 of 11 internal URLs checked returned an error.
+  No orphan-like pages: 3.5/4 - 1 crawled page(s) received no internal link from the other crawled pages.
+  Images with alt attribute: 2.5/5 - 8 of 16 images (50.0%) have an alt attribute.
+  robots.txt present: 4/4 - robots.txt found.
+  XML sitemap present: 4/4 - Sitemap found (3 URLs).
+  Sitemap referenced in robots.txt: 2/2 - robots.txt references a sitemap.
+  Site served over HTTPS: 0/3 - Homepage final URL is HTTP.
+  No mixed-content indicators: 0/2 - Not applicable (no pages to evaluate)
